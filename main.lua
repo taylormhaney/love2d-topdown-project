@@ -1,25 +1,22 @@
-map = require "files/map"
-player = require "files/player"
-camera = require "files/camera"
+require "files/player"
+Camera = require "libraries/hump.camera"
 
 function love.load()
-  mapload()
-  playerload()
-  cameraload()
+  camera = Camera()
 end
 
 function love.update(dt)
-  mapupdate(dt)
-  cameraupdate(dt)
-  playerupdate(dt)
+  camera:lockPosition(player.posX, player.posY)
+  playerUpdate()
 end
 
 function love.draw()
   camera:attach()
-  mapdraw()
-  playerdraw()
+  playerDraw()
   camera:detach()
-  love.graphics.print("FPS: "..tostring(love.timer.getFPS( )), 10, 10)
-  love.graphics.print("player x: "..player.x, 10, 25)
-  love.graphics.print("player y: "..player.y, 10, 40)
+  playerDebug()
 end
+
+love.load()
+love.update()
+love.draw()
