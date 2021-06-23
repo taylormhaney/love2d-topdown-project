@@ -12,7 +12,7 @@ This project makes use of the following:
 ### License
 > MIT License
 >
-> Copyright (c) 2020 Taylor Haney
+> Copyright (c) 2021 Max Haney
 >
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal
